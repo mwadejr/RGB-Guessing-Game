@@ -21,7 +21,7 @@ h1{
 }
 
 .bot{
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .square{
@@ -80,4 +80,7 @@ p:hover{
     cursor: pointer;
 }
 
+.navbar{
+    margin-top: 0;
+}
 
