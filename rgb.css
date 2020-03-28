@@ -1,3 +1,15 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.nav-item{
+    font-weight: 900;
+}
+
+.contain{
+    width: 600px;
+    margin: 0 auto;
+}
 .container{
     width: 600px;
 }
@@ -5,6 +17,11 @@
 h1{
     color: white;
     text-align: center;
+    margin-bottom: 0;
+}
+
+.bot{
+    margin-bottom: 10px;
 }
 
 .square{
@@ -13,6 +30,7 @@ h1{
     margin: 1.66%;
     width: 30%;
     float: left;
+    border-radius: 10%;
 }
 
 .selected{
@@ -21,10 +39,45 @@ h1{
 
 .display{
     text-transform: uppercase;
+    font-size: 4em;
 }
 
 body{
     background: black;
+}
+
+nav{
+    background-color: deepskyblue;
+    margin-bottom: 0;
+}
+
+.navbar{
+    margin-top: 0;
+}
+
+.nav-pills{
+    color: black;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: black;
+    background-color: deepskyblue;
+}
+.nav-pills .nav-link, .nav-pills .show>.nav-link {
+    color: black;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+p{
+    margin: 0;
+
+}
+
+p:hover{
+    cursor: pointer;
 }
 
 

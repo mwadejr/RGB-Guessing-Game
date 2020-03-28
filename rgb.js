@@ -7,11 +7,18 @@ var colors = [
     "rgb(255, 0, 133)"
 ];
 
+
+for(var i = 0; i<9; i++){
+colors[i] = "rgb(" + getRandomInt(0, 255)+ ", " + getRandomInt(0, 255) + ", " + getRandomInt(0, 255) + ")";
+}
+
+
 var endRound = false
 
 var square = document.querySelectorAll(".square");
-var goal = colors[1];
+var goal = colors[getRandomInt(0,8)];
 var display = document.querySelector(".display");
+
 
 display.textContent = goal;
 
@@ -36,3 +43,9 @@ for(var i = 0; i < square.length; i++){
     }
     });
 }
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
