@@ -1,0 +1,30 @@
+.container{
+    width: 600px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+.square{
+    background-color: aqua;
+    padding-bottom: 30%;
+    margin: 1.66%;
+    width: 30%;
+    float: left;
+}
+
+.selected{
+    visibility: hidden;
+}
+
+.display{
+    text-transform: uppercase;
+}
+
+body{
+    background: black;
+}
+
+
