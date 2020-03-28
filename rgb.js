@@ -24,6 +24,7 @@ var goal = null;
 var navLink = document.querySelector(".nav-link.active");
 var reset = document.querySelector("#new");
 var active = document.querySelectorAll(".highlight")
+var check = document.querySelector("#status")
 
 
 reset.addEventListener("click", diff);
@@ -90,6 +91,7 @@ function newRound(z)
     {
     square[i].classList.remove("selected");
     }
+    check.textContent = "";
     endRound = false;
     for(var i = 0; i<z; i++){
     colors[i] = "rgb(" + getRandomInt(0, 255)+ ", " + getRandomInt(0, 255) + ", " + getRandomInt(0, 255) + ")";
@@ -123,7 +125,10 @@ function newRound(z)
                             pill.style.backgroundColor = goal;
                             endRound = true;
                         }
-                        
+                        check.textContent = "Correct!";
+                    }
+                    if(!endRound){
+                    check.textContent = "Try Again!";
                     }
                 }
             });
