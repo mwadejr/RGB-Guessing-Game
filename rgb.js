@@ -14,6 +14,7 @@ var hard = document.querySelector("#hard");
 var e = 3;
 var m = 6;
 var h = 9;
+var first = true;
 
 var endRound = false
 var square = document.querySelectorAll(".square");
@@ -25,7 +26,7 @@ var reset = document.querySelector("#new");
 var active = document.querySelectorAll(".highlight")
 
 
-reset.addEventListener("click", difficulty);
+reset.addEventListener("click", diff);
 
 
 for(var i = 0; i<active.length;i++){
@@ -34,7 +35,7 @@ active[i].addEventListener("click", function(){
         active[i].classList.remove("active");
     }
     this.classList.add("active");
-    newRound();
+    newRound(difficulty());
 });
 }
 
@@ -46,8 +47,39 @@ newRound(h);
 
 function newRound(z)
 {
-    navLink.style.backgroundColor = "none";
+    // for(var i = 0; i < active.length; i++){
+    //     if(!active[i].classList.contains)
+    //     active[i].style.backgroundColor = "white"
+    // }
+
+    if(z === 3){
+        active[0].style.backgroundColor = goal;
+        nav.style.backgroundColor = goal;
+    }else
+    {
+        active[0].style.backgroundColor = "#f8f9fa"
+    }
+   
+    if(z === 6){
+        active[1].style.backgroundColor = goal;
+        nav.style.backgroundColor = goal;
+    }else
+    {
+        active[1].style.backgroundColor = "#f8f9fa"
+    }
+   
+    if(z === 9){
+        active[2].style.backgroundColor = goal;
+        nav.style.backgroundColor = goal;
+    }else
+    {
+        active[2].style.backgroundColor = "#f8f9fa"
+    }
+
+    if(!first){
     var pill = document.querySelector(".active");
+    pill.style.backgroundColor = goal;
+    }
 
     for(var i = z; i < 9; i++)
     {
@@ -96,9 +128,24 @@ function newRound(z)
                 }
             });
     }
+    first = false;
 }
 
 function difficulty(){
+    if(document.querySelector(".active").textContent === "Easy")
+    {
+        return e;
+    }
+    else if(document.querySelector(".active").textContent === "Medium")
+    {
+        return m;
+    }
+    else
+    {
+        return h;
+    }
+}
+function diff(){
     if(document.querySelector(".active").textContent === "Easy")
     {
         newRound(e);
